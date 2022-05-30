@@ -36,13 +36,11 @@ fun LightRayBottomNavView(
         calculateOffsetForItem(index = itemIndex)
     )
 
-    Box() {
-
+    Box( modifier = Modifier
+        .height(54.dp)
+        .background(Color.Black)
+        .fillMaxWidth()) {
         Row(
-            modifier = Modifier
-                .height(54.dp)
-                .background(Color.Black)
-                .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -84,10 +82,10 @@ fun LampLightBottomNavItem(
 ) {
     val animatedColor = animateColorAsState(
         if (isSelected) lightRayBottomNavViewSetup.selectedIconColor else lightRayBottomNavViewSetup.iconColor,
-        tween(600)
+        tween(lightRayBottomNavViewSetup.moveLightRayAnimationTweenDuration)
     )
 
-    val scale = animateFloatAsState(if (isSelected) 1.1f else 0.95f)
+    val scale = animateFloatAsState(if (isSelected) lightRayBottomNavViewSetup.selectedIconScale else lightRayBottomNavViewSetup.iconScale)
 
     Box(
         modifier = Modifier
@@ -106,7 +104,7 @@ fun LampLightBottomNavItem(
             Icon(
                 painter = painterResource(item.iconResId),
                 modifier = Modifier
-                    .size(24.dp)
+                    .size(20.dp)
                     .scale(scale.value),
                 contentDescription = item.title,
                 tint = animatedColor.value

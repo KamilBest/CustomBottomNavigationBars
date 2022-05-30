@@ -21,15 +21,6 @@ class LightRayViewSetup private constructor(
         var lightPanelColor: Color = Color(DEFAULT_PANEL_COLOR),
         var itemWidthRatio: Float = DEFAULT_ITEM_WIDTH_RATIO
     ) {
-        fun width(width: Dp) =
-            apply { this.width = width }
-
-        fun height(height: Dp) =
-            apply { this.height = height }
-
-        fun panelHeight(panelHeight: Dp) =
-            apply { this.panelHeight = panelHeight }
-
         fun lightPanelColor(lightPanelColor: Color) =
             apply { this.lightPanelColor = lightPanelColor }
 
