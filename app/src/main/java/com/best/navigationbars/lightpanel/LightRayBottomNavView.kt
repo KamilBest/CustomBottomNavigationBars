@@ -40,7 +40,7 @@ fun LightRayBottomNavView(
         .height(54.dp)
         .background(Color.Black)
         .fillMaxWidth()) {
-        Row(
+        Row( modifier = Modifier.fillMaxSize(),
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.CenterVertically
         ) {
