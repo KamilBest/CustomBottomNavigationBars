@@ -10,4 +10,5 @@ Multiple animations:
 1. Moving light ray,
 2. Changing color of selected item.
 3. Change icon scale of selected item.
+
 ![Alt text](light_ray_bottom_nav_gif.gif?raw=true "Light ray bottom navigation Bar")
